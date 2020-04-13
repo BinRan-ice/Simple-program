@@ -4,10 +4,10 @@
 #define MAX 500
 using namespace std;
 COLORREF color1 = 0, color2 = 0, color3 = 0, color4 = 0, color5 = 0;
-//»æÖÆÔ­Ê¼Í¼ĞÎ
+//ç»˜åˆ¶åŸå§‹å›¾å½¢
 void paint(int a[], int b[], COLORREF col[MAX + 1][MAX + 1])
 {
-	// ³õÊ¼»¯»æÍ¼´°¿Ú
+	// åˆå§‹åŒ–ç»˜å›¾çª—å£
 	initgraph(500, 500);
 	for (int i = 0; i <= MAX; i++)
 	{
@@ -19,7 +19,7 @@ void paint(int a[], int b[], COLORREF col[MAX + 1][MAX + 1])
 
 		}
 	}
-	//»æÖÆÖ¸¶¨Ìî³äÍ¼°¸6
+	//ç»˜åˆ¶æŒ‡å®šå¡«å……å›¾æ¡ˆ6
 	//setfillstyle(BS_HATCHED, HS_BDIAGONAL, NULL);
 	setfillcolor(0xFFFFFF);
 	solidrectangle(b[100], a[0], b[200], a[100]);
@@ -34,7 +34,7 @@ void paint(int a[], int b[], COLORREF col[MAX + 1][MAX + 1])
 	solidrectangle(b[100], a[400], b[200], a[500]);
 	solidrectangle(b[200], a[400], b[300], a[500]);
 	solidrectangle(b[300], a[400], b[400], a[500]);
-	//±£´æµ±Ç°»­²¼ÉÏ¸÷µãµÄÏñËØÖµ
+	//ä¿å­˜å½“å‰ç”»å¸ƒä¸Šå„ç‚¹çš„åƒç´ å€¼
 	for (int i = 0; i <= MAX; i++)
 	{
 		a[i] = i;
@@ -48,13 +48,13 @@ void paint(int a[], int b[], COLORREF col[MAX + 1][MAX + 1])
 	}
 }
 
-//ÑØĞĞ·½ÏòÀ©³ä»­²¼²¢Ìî³äÏñËØµã
+//æ²¿è¡Œæ–¹å‘æ‰©å……ç”»å¸ƒå¹¶å¡«å……åƒç´ ç‚¹
 void filling1(int c[], int d[], COLORREF col[MAX + 1][MAX + 1])
 {
 	Resize(NULL, 1000, 500);
-	//ÇåÆÁ
+	//æ¸…å±
 	cleardevice();
-	//Ìî³äÀ©´ó»­²¼ºóÃ»ÓĞÏñËØµãµÄÎ»ÖÃ
+	//å¡«å……æ‰©å¤§ç”»å¸ƒåæ²¡æœ‰åƒç´ ç‚¹çš„ä½ç½®
 	for (int i = 0; i <= MAX; i++)
 	{
 		c[i] = i;
@@ -66,7 +66,7 @@ void filling1(int c[], int d[], COLORREF col[MAX + 1][MAX + 1])
 		for (int j = 0; j <= MAX; j++)
 		{
 			d[(2 * j) + 1] = (2 * j) + 1;
-			//ÓÃÀ­¸ñÀÊÈÕÈı´Î²åÖµ¼ÆËã²åµãµÄÏñËØÖµ
+			//ç”¨æ‹‰æ ¼æœ—æ—¥ä¸‰æ¬¡æ’å€¼è®¡ç®—æ’ç‚¹çš„åƒç´ å€¼
 			color2 = (double)(-217 / 48) * (getpixel(d[(2 * j)], c[i]));
 			color3 = (double)(-5 / 16)   * (getpixel(d[(2 * j) + 2], c[i]));
 			color4 = (double)(15 / 16)   * (getpixel(d[(2 * j) + 4], c[i]));
@@ -79,7 +79,7 @@ void filling1(int c[], int d[], COLORREF col[MAX + 1][MAX + 1])
 
 void filling2(int c[], int d[])
 {
-	//½¨Á¢´æ·Åµ±Ç°500*1000»­²¼ÉÏÃ¿µãµÄÏñËØÖµ
+	//å»ºç«‹å­˜æ”¾å½“å‰500*1000ç”»å¸ƒä¸Šæ¯ç‚¹çš„åƒç´ å€¼
 	COLORREF **col2 = new COLORREF*[MAX + 1];
 	for (int i = 0; i < MAX + 1; ++i)
 	{
@@ -90,7 +90,7 @@ void filling2(int c[], int d[])
 		}
 	}
 	Resize(NULL, 1000, 1000);
-	//ÇåÆÁ
+	//æ¸…å±
 	cleardevice();
 	for (int i = 0; i <= 1000; i++)
 	{
@@ -110,7 +110,7 @@ void filling2(int c[], int d[])
 		{
 			for (int j = 0; j <= 1000; j++)
 			{
-				//ÓÃÀ­¸ñÀÊÈÕÈı´Î²åÖµ¼ÆËã²åµãµÄÏñËØÖµ
+				//ç”¨æ‹‰æ ¼æœ—æ—¥ä¸‰æ¬¡æ’å€¼è®¡ç®—æ’ç‚¹çš„åƒç´ å€¼
 				color2 = (double)(-217 / 48) * (getpixel(d[j], c[i - 1]));
 				color3 = (double)(-5 / 16)   * (getpixel(d[j], c[i + 1]));
 				color4 = (double)(15 / 16)   * (getpixel(d[j], c[i + 3]));
@@ -129,16 +129,16 @@ int main()
 	int c[1000 + 1] = { 0 };
 	int d[1000 + 1] = { 0 };
 	COLORREF col[MAX + 1][MAX + 1] = { 0 };
-	//»æÖÆÔ­Ê¼Í¼ĞÎ
+	//ç»˜åˆ¶åŸå§‹å›¾å½¢
 	paint(a, b, col);
 
-	//ÑØĞĞ·½ÏòÀ©³ä»­²¼500*1000
+	//æ²¿è¡Œæ–¹å‘æ‰©å……ç”»å¸ƒ500*1000
 	filling1(c, d, col);
 
-	//ÑØÁĞ·½ÏòÀ©³ä»­²¼1000*1000
+	//æ²¿åˆ—æ–¹å‘æ‰©å……ç”»å¸ƒ1000*1000
 	filling2(c, d);
 
-	// °´ÈÎÒâ¼üÍË³ö
+	// æŒ‰ä»»æ„é”®é€€å‡º
 	_getch();
 	closegraph();
 }
